@@ -1,0 +1,18 @@
+[project]
+name = "ehr"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ace-tools>=0.0",
+    "ace-tools-open>=0.1.0",
+    "datetime>=5.5",
+    "fastapi>=0.115.12",
+    "jinja2>=3.1.6",
+    "pandas>=2.2.3",
+    "python-multipart>=0.0.20",
+    "ruff>=0.11.8",
+    "sqlalchemy>=2.0.40",
+    "uvicorn>=0.34.2",
+]

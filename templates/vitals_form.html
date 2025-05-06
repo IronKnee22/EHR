@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Záznam vitálních funkcí</title>
+</head>
+<body>
+    <h1>Záznam všech vitálních funkcí</h1>
+    <form method="post">
+        <h2>SpO₂</h2>
+        <label for="spo2_numerator">SpO₂ (%)</label>
+        <input type="number" id="spo2_numerator" name="spo2_numerator" step="0.1" min="0" max="100" required>
+
+        <h2>Dechová frekvence</h2>
+        <label for="respiration_rate">Dechy za minutu</label>
+        <input type="number" id="respiration_rate" name="respiration_rate" step="1" min="0">
+
+        <h2>Tělesná teplota</h2>
+        <label for="temperature">Teplota (°C)</label>
+        <input type="number" id="temperature" name="temperature" step="0.1" min="30" max="45">
+
+        <label for="body_exposure">Expozice těla</label>
+        <input type="text" id="body_exposure" name="body_exposure">
+
+        <label for="location">Místo měření</label>
+        <input type="text" id="location" name="location">
+
+        <h2>Tep</h2>
+        <label for="pulse_rate">Tepová frekvence</label>
+        <input type="number" id="pulse_rate" name="pulse_rate" step="1" min="0">
+
+        <label for="pulse_position">Pozice těla</label>
+        <input type="text" id="pulse_position" name="pulse_position">
+
+        <label for="pulse_body_site">Místo měření tepu</label>
+        <input type="text" id="pulse_body_site" name="pulse_body_site">
+
+        <h2>Krevní tlak</h2>
+        <label for="systolic">Systolický tlak</label>
+        <input type="number" id="systolic" name="systolic" step="1" min="0">
+
+        <label for="diastolic">Diastolický tlak</label>
+        <input type="number" id="diastolic" name="diastolic" step="1" min="0">
+
+        <label for="bp_position">Pozice při měření</label>
+        <input type="text" id="bp_position" name="bp_position">
+
+        <label for="bp_location">Místo měření</label>
+        <input type="text" id="bp_location" name="bp_location">
+
+        <br><br>
+        <button type="submit">Uložit záznam</button>
+    </form>
+</body>
+</html>

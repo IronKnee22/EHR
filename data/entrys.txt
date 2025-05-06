@@ -1,0 +1,259 @@
+[
+  {
+    "label": "Start_time",
+    "id": "start_time",
+    "rmType": "DV_DATE_TIME",
+    "aqlPath": "/context/context/start_time",
+    "inputType": [
+      "DATETIME"
+    ]
+  },
+  {
+    "label": "Setting",
+    "id": "setting",
+    "rmType": "DV_CODED_TEXT",
+    "aqlPath": "/context/context/setting",
+    "inputType": [
+      "TEXT",
+      "TEXT"
+    ]
+  },
+  {
+    "label": "SpO₂",
+    "id": "spo",
+    "rmType": "DV_PROPORTION",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/content[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/data[at0001]/events[at0002]/content[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0006]/value",
+    "inputType": [
+      "DECIMAL",
+      "DECIMAL"
+    ]
+  },
+  {
+    "label": "Time",
+    "id": "time",
+    "rmType": "DV_DATE_TIME",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/content[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/data[at0001]/events[at0002]/content[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/data[at0001]/events[at0002]/time",
+    "inputType": [
+      "DATETIME"
+    ]
+  },
+  {
+    "label": "Rate",
+    "id": "rate",
+    "rmType": "DV_QUANTITY",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.respiration.v2]/content[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/content[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/data[at0003]/items[at0004]/value",
+    "inputType": [
+      "DECIMAL",
+      "CODED_TEXT"
+    ]
+  },
+  {
+    "label": "Time",
+    "id": "time",
+    "rmType": "DV_DATE_TIME",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.respiration.v2]/content[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/content[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/time",
+    "inputType": [
+      "DATETIME"
+    ]
+  },
+  {
+    "label": "Temperature",
+    "id": "temperature",
+    "rmType": "DV_QUANTITY",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.body_temperature.v2]/content[openEHR-EHR-OBSERVATION.body_temperature.v2]/data[at0002]/events[at0003]/content[openEHR-EHR-OBSERVATION.body_temperature.v2]/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value",
+    "inputType": [
+      "DECIMAL",
+      "CODED_TEXT"
+    ]
+  },
+  {
+    "label": "Body exposure",
+    "id": "body_exposure",
+    "rmType": "DV_CODED_TEXT",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.body_temperature.v2]/content[openEHR-EHR-OBSERVATION.body_temperature.v2]/data[at0002]/events[at0003]/content[openEHR-EHR-OBSERVATION.body_temperature.v2]/data[at0002]/events[at0003]/state[at0029]/items[at0030]/value",
+    "inputType": [
+      "CODED_TEXT",
+      "TEXT"
+    ]
+  },
+  {
+    "label": "Time",
+    "id": "time",
+    "rmType": "DV_DATE_TIME",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.body_temperature.v2]/content[openEHR-EHR-OBSERVATION.body_temperature.v2]/data[at0002]/events[at0003]/content[openEHR-EHR-OBSERVATION.body_temperature.v2]/data[at0002]/events[at0003]/time",
+    "inputType": [
+      "DATETIME"
+    ]
+  },
+  {
+    "label": "Location of measurement",
+    "id": "location_of_measurement",
+    "rmType": "DV_CODED_TEXT",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.body_temperature.v2]/content[openEHR-EHR-OBSERVATION.body_temperature.v2]/protocol[at0020]/items[at0021]/value",
+    "inputType": [
+      "CODED_TEXT",
+      "TEXT"
+    ]
+  },
+  {
+    "label": "Systolic",
+    "id": "systolic",
+    "rmType": "DV_QUANTITY",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at0006]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at0006]/data[at0003]/items[at0004]/value",
+    "inputType": [
+      "DECIMAL",
+      "CODED_TEXT"
+    ]
+  },
+  {
+    "label": "Diastolic",
+    "id": "diastolic",
+    "rmType": "DV_QUANTITY",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at0006]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at0006]/data[at0003]/items[at0005]/value",
+    "inputType": [
+      "DECIMAL",
+      "CODED_TEXT"
+    ]
+  },
+  {
+    "label": "Position",
+    "id": "position",
+    "rmType": "DV_CODED_TEXT",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at0006]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at0006]/state[at0007]/items[at0008]/value",
+    "inputType": [
+      "CODED_TEXT"
+    ]
+  },
+  {
+    "label": "Time",
+    "id": "time",
+    "rmType": "DV_DATE_TIME",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at0006]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at0006]/time",
+    "inputType": [
+      "DATETIME"
+    ]
+  },
+  {
+    "label": null,
+    "id": "math_function",
+    "rmType": "DV_CODED_TEXT",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at1042]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at1042]/math_function",
+    "inputType": [
+      "CODED_TEXT"
+    ]
+  },
+  {
+    "label": null,
+    "id": "width",
+    "rmType": "DV_DURATION",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at1042]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at1042]/width",
+    "inputType": [
+      "INTEGER",
+      "INTEGER",
+      "INTEGER",
+      "INTEGER",
+      "INTEGER",
+      "INTEGER",
+      "INTEGER"
+    ]
+  },
+  {
+    "label": "Time",
+    "id": "time",
+    "rmType": "DV_DATE_TIME",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at1042]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/data[at0001]/events[at1042]/time",
+    "inputType": [
+      "DATETIME"
+    ]
+  },
+  {
+    "label": "Location of measurement",
+    "id": "location_of_measurement",
+    "rmType": "DV_CODED_TEXT",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/content[openEHR-EHR-OBSERVATION.blood_pressure.v2]/protocol[at0011]/items[at0014]/value",
+    "inputType": [
+      "CODED_TEXT",
+      "TEXT"
+    ]
+  },
+  {
+    "label": "Rate",
+    "id": "rate",
+    "rmType": "DV_QUANTITY",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.pulse.v2]/content[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]/content[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value",
+    "inputType": [
+      "DECIMAL",
+      "CODED_TEXT"
+    ]
+  },
+  {
+    "label": "Position",
+    "id": "position",
+    "rmType": "DV_CODED_TEXT",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.pulse.v2]/content[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]/content[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]/state[at0012]/items[at0013]/value",
+    "inputType": [
+      "CODED_TEXT"
+    ]
+  },
+  {
+    "label": "Time",
+    "id": "time",
+    "rmType": "DV_DATE_TIME",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.pulse.v2]/content[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]/content[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]/time",
+    "inputType": [
+      "DATETIME"
+    ]
+  },
+  {
+    "label": null,
+    "id": "math_function",
+    "rmType": "DV_CODED_TEXT",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.pulse.v2]/content[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at1036]/content[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at1036]/math_function",
+    "inputType": [
+      "CODED_TEXT"
+    ]
+  },
+  {
+    "label": "Width",
+    "id": "width",
+    "rmType": "DV_DURATION",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.pulse.v2]/content[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at1036]/content[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at1036]/width",
+    "inputType": [
+      "INTEGER",
+      "INTEGER",
+      "INTEGER",
+      "INTEGER",
+      "INTEGER",
+      "INTEGER",
+      "INTEGER"
+    ]
+  },
+  {
+    "label": "Time",
+    "id": "time",
+    "rmType": "DV_DATE_TIME",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.pulse.v2]/content[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at1036]/content[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at1036]/time",
+    "inputType": [
+      "DATETIME"
+    ]
+  },
+  {
+    "label": "Body site",
+    "id": "body_site",
+    "rmType": "DV_CODED_TEXT",
+    "aqlPath": "/content[openEHR-EHR-OBSERVATION.pulse.v2]/content[openEHR-EHR-OBSERVATION.pulse.v2]/protocol[at0010]/items[at1037]/value",
+    "inputType": [
+      "CODED_TEXT",
+      "TEXT"
+    ]
+  },
+  {
+    "label": null,
+    "id": "category",
+    "rmType": "DV_CODED_TEXT",
+    "aqlPath": "/category",
+    "inputType": [
+      "CODED_TEXT"
+    ]
+  }
+]
