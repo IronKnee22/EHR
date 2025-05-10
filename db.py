@@ -7,7 +7,7 @@ DATABASE_URL = "sqlite:///./ehr.db"
 
 engine = create_engine(
     DATABASE_URL,
-    connect_args={"check_same_thread": False},  # SQLite specifické
+    connect_args={"check_same_thread": False}, 
 )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

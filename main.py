@@ -3,6 +3,9 @@ from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 
+from datetime import date
+
+
 from db import SessionLocal, init_db
 from models.ehr_models import (
     EHR,
@@ -38,14 +41,11 @@ def export_fhir():
 
     observations = []
 
-    # Přidej jako první záznam i FHIR Patient resource
     fhir_patient = {
         "resourceType": "Patient",
         "id": f"{patient.id}",
         "name": [{"text": patient.name}],
-        "birthDate": patient.birth_date.isoformat()
-        if patient.birth_date
-        else "2000-01-01",
+        "birthDate": patient.birth_date.isoformat(),
     }
 
     for composition in patient.ehr.compositions:
@@ -224,15 +224,15 @@ def export_fhir():
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(fhir_bundle, f, ensure_ascii=False, indent=2)
 
-    return RedirectResponse(url="/form/vitals", status_code=303)
+    return RedirectResponse(url="/", status_code=303)
 
 
-@app.get("/form/vitals")
+@app.get("/")
 def vitals_form(request: Request):
     return templates.TemplateResponse("vitals_form.html", {"request": request})
 
 
-@app.post("/form/vitals")
+@app.post("/")
 def submit_vitals(
     request: Request,
     spo2_numerator: float = Form(...),
@@ -250,15 +250,13 @@ def submit_vitals(
 ):
     db: Session = SessionLocal()
 
-    # Získat nebo vytvořit pacienta podle jména
     patient = db.query(Patient).filter_by(name="Demo Patient").first()
     if not patient:
-        patient = Patient(name="Demo Patient")
+        patient = Patient(name="Demo Patient", birth_date=date(2002, 7, 15))
         db.add(patient)
         db.commit()
         db.refresh(patient)
 
-    # Získat nebo vytvořit EHR
     ehr = db.query(EHR).filter_by(patient_id=patient.id).first()
     if not ehr:
         ehr = EHR(patient_id=patient.id)
@@ -266,13 +264,11 @@ def submit_vitals(
         db.commit()
         db.refresh(ehr)
 
-    # Vytvořit CompositionContext
     context = CompositionContext()
     db.add(context)
     db.commit()
     db.refresh(context)
 
-    # Vytvořit Composition
     composition = Composition(
         ehr_id=ehr.id,
         context_id=context.id,
@@ -284,7 +280,6 @@ def submit_vitals(
     db.commit()
     db.refresh(composition)
 
-    # Vložit jednotlivé měření s odkazem na composition
     db.add(PulseOximetry(spo2_numerator=spo2_numerator, composition_id=composition.id))
 
     if respiration_rate is not None:
@@ -324,4 +319,6 @@ def submit_vitals(
     db.commit()
     db.close()
 
-    return RedirectResponse(url="/form/vitals", status_code=303)
+    return RedirectResponse(url="/", status_code=303)
+
+# .\.venv\Scripts\python.exe -m uvicorn main:app --reload

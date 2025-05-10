@@ -20,7 +20,7 @@ class Patient(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String, nullable=False)
-    birth_date = Column(DateTime, nullable=True)
+    birth_date = Column(DateTime, nullable=False)
 
     ehr = relationship("EHR", back_populates="patient", uselist=False)
 
