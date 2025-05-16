@@ -1,60 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <title>Záznam vitálních funkcí</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Záznam všech vitálních funkcí</h1>
-    <form method="post">
-        <h2>SpO₂</h2>
-        <label for="spo2_numerator">SpO₂ (%)</label>
-        <input type="number" id="spo2_numerator" name="spo2_numerator" step="0.1" min="0" max="100" required>
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="mb-4">Záznam vitálních funkcí</h1>
+        <form method="post" class="row g-3">
 
-        <h2>Dechová frekvence</h2>
-        <label for="respiration_rate">Dechy za minutu</label>
-        <input type="number" id="respiration_rate" name="respiration_rate" step="1" min="0">
+            <h2>SpO₂</h2>
+            <div class="col-md-4">
+                <label for="spo2_numerator" class="form-label">SpO₂ (%)</label>
+                <input type="number" class="form-control" id="spo2_numerator" name="spo2_numerator" step="0.1" min="0" max="100" required>
+            </div>
 
-        <h2>Tělesná teplota</h2>
-        <label for="temperature">Teplota (°C)</label>
-        <input type="number" id="temperature" name="temperature" step="0.1" min="30" max="45">
+            <h2>Dechová frekvence</h2>
+            <div class="col-md-4">
+                <label for="respiration_rate" class="form-label">Dechy za minutu</label>
+                <input type="number" class="form-control" id="respiration_rate" name="respiration_rate" step="1" min="0">
+            </div>
 
-        <label for="body_exposure">Expozice těla</label>
-        <input type="text" id="body_exposure" name="body_exposure">
+            <h2>Tělesná teplota</h2>
+            <div class="col-md-4">
+                <label for="temperature" class="form-label">Teplota (°C)</label>
+                <input type="number" class="form-control" id="temperature" name="temperature" step="0.1" min="30" max="45">
+            </div>
 
-        <label for="location">Místo měření</label>
-        <input type="text" id="location" name="location">
+            <div class="col-md-4">
+                <label for="body_exposure" class="form-label">Expozice těla</label>
+                <input type="text" class="form-control" id="body_exposure" name="body_exposure">
+            </div>
 
-        <h2>Tep</h2>
-        <label for="pulse_rate">Tepová frekvence</label>
-        <input type="number" id="pulse_rate" name="pulse_rate" step="1" min="0">
+            <div class="col-md-4">
+                <label for="location" class="form-label">Místo měření</label>
+                <input type="text" class="form-control" id="location" name="location">
+            </div>
 
-        <label for="pulse_position">Pozice těla</label>
-        <input type="text" id="pulse_position" name="pulse_position">
+            <h2>Tep</h2>
+            <div class="col-md-4">
+                <label for="pulse_rate" class="form-label">Tepová frekvence</label>
+                <input type="number" class="form-control" id="pulse_rate" name="pulse_rate" step="1" min="0">
+            </div>
 
-        <label for="pulse_body_site">Místo měření tepu</label>
-        <input type="text" id="pulse_body_site" name="pulse_body_site">
+            <div class="col-md-4">
+                <label for="pulse_position" class="form-label">Pozice těla</label>
+                <input type="text" class="form-control" id="pulse_position" name="pulse_position">
+            </div>
 
-        <h2>Krevní tlak</h2>
-        <label for="systolic">Systolický tlak</label>
-        <input type="number" id="systolic" name="systolic" step="1" min="0">
+            <div class="col-md-4">
+                <label for="pulse_body_site" class="form-label">Místo měření tepu</label>
+                <input type="text" class="form-control" id="pulse_body_site" name="pulse_body_site">
+            </div>
 
-        <label for="diastolic">Diastolický tlak</label>
-        <input type="number" id="diastolic" name="diastolic" step="1" min="0">
+            <h2>Krevní tlak</h2>
+            <div class="col-md-4">
+                <label for="systolic" class="form-label">Systolický tlak</label>
+                <input type="number" class="form-control" id="systolic" name="systolic" step="1" min="0">
+            </div>
 
-        <label for="bp_position">Pozice při měření</label>
-        <input type="text" id="bp_position" name="bp_position">
+            <div class="col-md-4">
+                <label for="diastolic" class="form-label">Diastolický tlak</label>
+                <input type="number" class="form-control" id="diastolic" name="diastolic" step="1" min="0">
+            </div>
 
-        <label for="bp_location">Místo měření</label>
-        <input type="text" id="bp_location" name="bp_location">
+            <div class="col-md-4">
+                <label for="bp_position" class="form-label">Pozice při měření</label>
+                <input type="text" class="form-control" id="bp_position" name="bp_position">
+            </div>
 
-        <br><br>
-        <button type="submit">Uložit záznam</button>
-    </form>
+            <div class="col-md-4">
+                <label for="bp_location" class="form-label">Místo měření</label>
+                <input type="text" class="form-control" id="bp_location" name="bp_location">
+            </div>
 
-    <form method="get" action="/export/fhir" style="margin-top: 20px;">
-        <button type="submit">Exportovat do FHIR JSON</button>
-    </form>
-    
+            <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-primary">Uložit záznam</button>
+                <a href="/" class="btn btn-secondary ms-2">Zpět na přehled</a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
