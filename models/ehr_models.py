@@ -12,9 +12,6 @@ def now_prague():
     return datetime.now(ZoneInfo("Europe/Prague"))
 
 
-# ---------------------------- MODELY ----------------------------
-
-
 class Patient(Base):
     __tablename__ = "patient"
 

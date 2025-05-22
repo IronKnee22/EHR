@@ -17,7 +17,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "obs-pulse-3",
+        "id": "obs-pulse-5",
         "status": "final",
         "code": {
           "coding": [
@@ -32,19 +32,28 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "effectiveDateTime": "2025-05-16T12:28:18.566744",
+        "effectiveDateTime": "2025-05-22T12:06:50.811842",
         "valueQuantity": {
           "value": 90.0,
           "unit": "beats/minute",
           "system": "http://unitsofmeasure.org",
           "code": "/min"
-        }
+        },
+        "bodySite": {
+          "text": "Finger"
+        },
+        "extension": [
+          {
+            "url": "http://example.org/fhir/StructureDefinition/body-position",
+            "valueString": "Standing/upright"
+          }
+        ]
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "obs-sbp-3",
+        "id": "obs-sbp-5",
         "status": "final",
         "code": {
           "coding": [
@@ -59,19 +68,28 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "effectiveDateTime": "2025-05-16T12:28:18.564744",
+        "effectiveDateTime": "2025-05-22T12:06:50.808743",
         "valueQuantity": {
           "value": 120.0,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mm[Hg]"
-        }
+        },
+        "bodySite": {
+          "text": "Upper arm - Left"
+        },
+        "extension": [
+          {
+            "url": "http://example.org/fhir/StructureDefinition/body-position",
+            "valueString": "Standing/upright"
+          }
+        ]
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "obs-dbp-3",
+        "id": "obs-dbp-5",
         "status": "final",
         "code": {
           "coding": [
@@ -86,19 +104,28 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "effectiveDateTime": "2025-05-16T12:28:18.564744",
+        "effectiveDateTime": "2025-05-22T12:06:50.808743",
         "valueQuantity": {
           "value": 80.0,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mm[Hg]"
-        }
+        },
+        "bodySite": {
+          "text": "Upper arm - Left"
+        },
+        "extension": [
+          {
+            "url": "http://example.org/fhir/StructureDefinition/body-position",
+            "valueString": "Standing/upright"
+          }
+        ]
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "obs-temp-3",
+        "id": "obs-temp-5",
         "status": "final",
         "code": {
           "coding": [
@@ -113,19 +140,28 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "effectiveDateTime": "2025-05-16T12:28:18.565727",
+        "effectiveDateTime": "2025-05-22T12:06:50.810840",
         "valueQuantity": {
           "value": 37.0,
           "unit": "°C",
           "system": "http://unitsofmeasure.org",
           "code": "Cel"
-        }
+        },
+        "bodySite": {
+          "text": "Rectum"
+        },
+        "extension": [
+          {
+            "url": "http://example.org/fhir/StructureDefinition/body-exposure",
+            "valueString": "Naked"
+          }
+        ]
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "obs-resp-3",
+        "id": "obs-resp-5",
         "status": "final",
         "code": {
           "coding": [
@@ -140,7 +176,7 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "effectiveDateTime": "2025-05-16T12:28:18.567744",
+        "effectiveDateTime": "2025-05-22T12:06:50.812840",
         "valueQuantity": {
           "value": 17.0,
           "unit": "breaths/minute",
@@ -152,7 +188,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "obs-spo2-3",
+        "id": "obs-spo2-5",
         "status": "final",
         "code": {
           "coding": [
@@ -167,7 +203,7 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "effectiveDateTime": "2025-05-16T12:28:18.566744",
+        "effectiveDateTime": "2025-05-22T12:06:50.811842",
         "valueQuantity": {
           "value": 98.0,
           "unit": "%",

@@ -2,12 +2,10 @@ import json
 
 import pandas as pd
 
-# Znovunačtení správného souboru
 with open(r"data/ehr.school.v0.json", "r", encoding="utf-8") as file:
     web_template = json.load(file)
 
 
-# Funkce pro rekurzivní průchod stromem a výpis vyplnitelných polí
 def extract_fillable_fields(node, path=""):
     fields = []
     current_path = path + node.get("aqlPath", "")
@@ -26,13 +24,12 @@ def extract_fillable_fields(node, path=""):
     return fields
 
 
-# Spuštění extrakce
 fillable_fields = extract_fillable_fields(web_template["tree"])
 
-# Uložení do souboru entrys.txt jako JSON
+
 with open(r"data/entrys.txt", "w", encoding="utf-8") as output_file:
     json.dump(fillable_fields, output_file, ensure_ascii=False, indent=2)
 
-# Pro přehlednost vypiš první řádky jako tabulku (volitelné)
+
 df_fillable = pd.DataFrame(fillable_fields)
 print(df_fillable.head())

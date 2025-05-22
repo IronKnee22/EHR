@@ -69,6 +69,15 @@ def export_fhir():
                         "system": "http://unitsofmeasure.org",
                         "code": "/min",
                     },
+                    "bodySite": {"text": pulse.body_site} if pulse.body_site else None,
+                    "extension": [
+                        {
+                            "url": "http://example.org/fhir/StructureDefinition/body-position",
+                            "valueString": pulse.position,
+                        }
+                    ]
+                    if pulse.position
+                    else [],
                 }
             )
 
@@ -97,6 +106,15 @@ def export_fhir():
                             "system": "http://unitsofmeasure.org",
                             "code": "mm[Hg]",
                         },
+                        "bodySite": {"text": bp.location} if bp.location else None,
+                        "extension": [
+                            {
+                                "url": "http://example.org/fhir/StructureDefinition/body-position",
+                                "valueString": bp.position,
+                            }
+                        ]
+                        if bp.position
+                        else [],
                     }
                 )
             if bp.diastolic:
@@ -123,6 +141,15 @@ def export_fhir():
                             "system": "http://unitsofmeasure.org",
                             "code": "mm[Hg]",
                         },
+                        "bodySite": {"text": bp.location} if bp.location else None,
+                        "extension": [
+                            {
+                                "url": "http://example.org/fhir/StructureDefinition/body-position",
+                                "valueString": bp.position,
+                            }
+                        ]
+                        if bp.position
+                        else [],
                     }
                 )
 
@@ -150,6 +177,15 @@ def export_fhir():
                         "system": "http://unitsofmeasure.org",
                         "code": "Cel",
                     },
+                    "bodySite": {"text": temp.location} if temp.location else None,
+                    "extension": [
+                        {
+                            "url": "http://example.org/fhir/StructureDefinition/body-exposure",
+                            "valueString": temp.body_exposure,
+                        }
+                    ]
+                    if temp.body_exposure
+                    else [],
                 }
             )
 
@@ -243,7 +279,6 @@ def home(request: Request):
                 "spo2": "-",
             }
 
-            # Vezmeme první hodnotu z každého typu (pokud existuje)
             if composition.pulse:
                 row["heart_rate"] = (
                     f"{composition.pulse[0].rate} {composition.pulse[0].rate_unit}"
@@ -323,6 +358,15 @@ def export_fhir_composition(composition_id: int):
                     "system": "http://unitsofmeasure.org",
                     "code": "/min",
                 },
+                "bodySite": {"text": pulse.body_site} if pulse.body_site else None,
+                "extension": [
+                    {
+                        "url": "http://example.org/fhir/StructureDefinition/body-position",
+                        "valueString": pulse.position,
+                    }
+                ]
+                if pulse.position
+                else [],
             }
         )
 
@@ -351,6 +395,15 @@ def export_fhir_composition(composition_id: int):
                         "system": "http://unitsofmeasure.org",
                         "code": "mm[Hg]",
                     },
+                    "bodySite": {"text": bp.location} if bp.location else None,
+                    "extension": [
+                        {
+                            "url": "http://example.org/fhir/StructureDefinition/body-position",
+                            "valueString": bp.position,
+                        }
+                    ]
+                    if bp.position
+                    else [],
                 }
             )
         if bp.diastolic:
@@ -377,6 +430,15 @@ def export_fhir_composition(composition_id: int):
                         "system": "http://unitsofmeasure.org",
                         "code": "mm[Hg]",
                     },
+                    "bodySite": {"text": bp.location} if bp.location else None,
+                    "extension": [
+                        {
+                            "url": "http://example.org/fhir/StructureDefinition/body-position",
+                            "valueString": bp.position,
+                        }
+                    ]
+                    if bp.position
+                    else [],
                 }
             )
 
@@ -404,6 +466,15 @@ def export_fhir_composition(composition_id: int):
                     "system": "http://unitsofmeasure.org",
                     "code": "Cel",
                 },
+                "bodySite": {"text": temp.location} if temp.location else None,
+                "extension": [
+                    {
+                        "url": "http://example.org/fhir/StructureDefinition/body-exposure",
+                        "valueString": temp.body_exposure,
+                    }
+                ]
+                if temp.body_exposure
+                else [],
             }
         )
 
@@ -471,8 +542,6 @@ def export_fhir_composition(composition_id: int):
 
     os.makedirs("data", exist_ok=True)
     output_path = os.path.join("data", f"fhir_export_{composition_id}.json")
-    print("Saving FHIR bundle to:", output_path)
-
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(fhir_bundle, f, ensure_ascii=False, indent=2)
 

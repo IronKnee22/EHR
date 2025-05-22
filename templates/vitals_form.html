@@ -30,13 +30,26 @@
 
             <div class="col-md-4">
                 <label for="body_exposure" class="form-label">Expozice těla</label>
-                <input type="text" class="form-control" id="body_exposure" name="body_exposure">
+                <select class="form-select" id="body_exposure" name="body_exposure">
+                    <option value="">-- Vyberte možnost --</option>
+                    <option value="Naked">Naked</option>
+                    <option value="Appropriate clothing/bedding">Appropriate clothing/bedding</option>
+                </select>
             </div>
+
 
             <div class="col-md-4">
                 <label for="location" class="form-label">Místo měření</label>
-                <input type="text" class="form-control" id="location" name="location">
+                <select class="form-select" id="location" name="location">
+                    <option value="">-- Vyberte místo --</option>
+                    <option value="Rectum">Rectum</option>
+                    <option value="Axilla">Axilla</option>
+                    <option value="Ear canal">Ear canal</option>
+                    <option value="Forehead">Forehead</option>
+                    <option value="Mouth">Mouth</option>
+                </select>
             </div>
+
 
             <h2>Tep</h2>
             <div class="col-md-4">
@@ -46,34 +59,62 @@
 
             <div class="col-md-4">
                 <label for="pulse_position" class="form-label">Pozice těla</label>
-                <input type="text" class="form-control" id="pulse_position" name="pulse_position">
+                <select class="form-select" id="pulse_position" name="pulse_position">
+                    <option value="">-- Vyberte pozici --</option>
+                    <option value="Standing/upright">Standing/upright</option>
+                    <option value="Sitting">Sitting</option>
+                    <option value="Reclining">Reclining</option>
+                    <option value="Lying">Lying</option>
+                </select>
             </div>
+
 
             <div class="col-md-4">
                 <label for="pulse_body_site" class="form-label">Místo měření tepu</label>
-                <input type="text" class="form-control" id="pulse_body_site" name="pulse_body_site">
+                <select class="form-select" id="pulse_body_site" name="pulse_body_site">
+                    <option value="">-- Vyberte místo --</option>
+                    <option value="Heart">Heart</option>
+                    <option value="Finger">Finger</option>
+                    <option value="Toe">Toe</option>
+                    <option value="Ear lobe">Ear lobe</option>
+                </select>
             </div>
 
+
             <h2>Krevní tlak</h2>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label for="systolic" class="form-label">Systolický tlak</label>
                 <input type="number" class="form-control" id="systolic" name="systolic" step="1" min="0">
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label for="diastolic" class="form-label">Diastolický tlak</label>
                 <input type="number" class="form-control" id="diastolic" name="diastolic" step="1" min="0">
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label for="bp_position" class="form-label">Pozice při měření</label>
-                <input type="text" class="form-control" id="bp_position" name="bp_position">
+                <select class="form-select" id="bp_position" name="bp_position">
+                    <option value="">-- Vyberte pozici --</option>
+                    <option value="Standing/upright">Standing/upright</option>
+                    <option value="Sitting">Sitting</option>
+                    <option value="Reclining">Reclining</option>
+                    <option value="Lying">Lying</option>
+                </select>
             </div>
 
-            <div class="col-md-4">
+
+            <div class="col-md-3">
                 <label for="bp_location" class="form-label">Místo měření</label>
-                <input type="text" class="form-control" id="bp_location" name="bp_location">
+                <select class="form-select" id="bp_location" name="bp_location">
+                    <option value="">-- Vyberte místo --</option>
+                    <option value="Upper arm - Left">Upper arm - Left</option>
+                    <option value="Upper arm - Right">Upper arm - Right</option>
+                    <option value="Forearm - Left">Forearm - Left</option>
+                    <option value="Forearm - Right">Forearm - Right</option>
+                </select>
             </div>
+
 
             <div class="col-12 mt-4">
                 <button type="submit" class="btn btn-primary">Uložit záznam</button>
